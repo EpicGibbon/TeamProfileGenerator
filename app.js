@@ -18,6 +18,25 @@ fs.writeFile(outputPath, HTML, (err) => {
     console.log(`You've successfully created an HTML file`);
 });
 
+const questions = [
+    {
+        type: "input",
+        message: "What is your name?",
+        name: "nameval"
+    },
+    {
+        type: "input",
+        message: "What is your id?",
+        name: "idval"
+    },
+    {
+        type: "input",
+        message: "What is your email?",
+        name: "emailval"
+    }
+]
+
+inquirer(questions);
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
