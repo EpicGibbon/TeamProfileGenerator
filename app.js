@@ -10,6 +10,13 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const empArr = [];
+
+const HTML = render(empArr);
+
+fs.writeFile(outputPath, HTML, (err) => {
+    console.log(`You've successfully created an HTML file`);
+});
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
