@@ -9,10 +9,10 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+//example of how its supposed to look
+const emptyArr = [];
 
-const empArr = [];
-
-const HTML = render(empArr);
+const HTML = render(emptyArr);
 
 fs.writeFile(outputPath, HTML, (err) => {
     console.log(`You've successfully created an HTML file`);
