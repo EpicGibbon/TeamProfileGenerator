@@ -25,7 +25,7 @@ function empList() {
             {
                 type: "list",
                 message: "Which of the following would you like to add to your team?",
-                name: "empList",
+                name: "employeeList",
                 choices: [
                     "Engineer",
                     "Manager",
@@ -33,7 +33,7 @@ function empList() {
                 ]
             },
         ]).then((answers) => {
-            if (answers.empList === "Manager") {
+            if (answers.employeeList === "Manager") {
                 if (manager === false) {
                     manager = true;
                     addMgr();
@@ -41,18 +41,17 @@ function empList() {
                     console.log("It seems like you will require at least one Manager");
                     empList();
                 }
-            } else if (answers.empList === "Engineer") {
+            } else if (answers.employeeList === "Engineer") {
                 addEngineer();
-            } else if (answers.empList === "intern") {
+            } else if (answers.employeeList === "intern") {
                 addIntern();
             }
             else {
-                render(emptyArray)
-                end();
+                empList();
             }
         });
 }
-//This 
+//This creates the manager variable that the user selects
 function addMgr() {
     inquirer
         .prompt([
@@ -150,12 +149,15 @@ function addEngineer() {
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
-fs.writeFile(outputPath, render(emptyArray), (err) => {
-    console.log(`You've successfully created the employee summary file!`);
-    if (err) {
-        return err;
-    }
-});
+function writeFile() {
+    fs.writeFile(outputPath, render(emptyArray), (err) => {
+        console.log(`You've successfully created the employee summary file!`);
+        if (err) {
+            return err;
+        };
+    });
+}
+writeFile();
 
 
 
