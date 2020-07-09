@@ -19,9 +19,10 @@ const emptyArray = [];
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 //Using the Inquirer package to prompt the and figure what type of user we're dealing with
+
 function empList() {
     inquirer
-        .prompt = ([
+        .prompt ([
             {
                 type: "list",
                 message: "Which of the following would you like to add to your team?",
@@ -29,7 +30,8 @@ function empList() {
                 choices: [
                     "Engineer",
                     "Manager",
-                    "Intern"
+                    "Intern",
+                    "end"
                 ]
             },
         ]).then((answers) => {
@@ -43,11 +45,11 @@ function empList() {
                 }
             } else if (answers.employeeList === "Engineer") {
                 addEngineer();
-            } else if (answers.employeeList === "intern") {
+            } else if (answers.employeeList === "Intern") {
                 addIntern();
             }
             else {
-                empList();
+                employeefile();
             }
         });
 }
@@ -108,7 +110,7 @@ function addIntern() {
             }
         ])
         .then((answers) => {
-            const int = new Intern(answer.intschool, answers.intName, answers.intEmail, answer.intID)
+            const int = new Intern(answers.intschool, answers.intName, answers.intEmail, answers.intID)
             emptyArray.push(int);
             empList();
         })
@@ -145,11 +147,11 @@ function addEngineer() {
         }
         )
 }
-
+empList();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
-function writeFile() {
+function employeefile() {
     fs.writeFile(outputPath, render(emptyArray), (err) => {
         console.log(`You've successfully created the employee summary file!`);
         if (err) {
@@ -157,7 +159,6 @@ function writeFile() {
         };
     });
 }
-writeFile();
 
 
 
