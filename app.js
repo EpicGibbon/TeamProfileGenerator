@@ -40,7 +40,7 @@ function empList() {
                     manager = true;
                     addMgr();
                 } else {
-                    console.log("It seems like you will require at least one Manager");
+                    console.log("Only able to assign one manager per team!");
                     empList();
                 }
             } else if (answers.employeeList === "Engineer") {
