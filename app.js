@@ -59,11 +59,6 @@ function addMgr() {
         .prompt([
             {
                 type: "input",
-                message: "What is your manager's office number??",
-                name: "officenum"
-            },
-            {
-                type: "input",
                 message: "What is your managers name?",
                 name: "MgrName"
             },
@@ -76,10 +71,15 @@ function addMgr() {
                 type: "input",
                 message: "What is your Manager ID?",
                 name: "MgrID"
+            },
+            {
+                type: "input",
+                message: "What is your manager's office number??",
+                name: "officenum"
             }
         ])
         .then((answers) => {
-            const mgr = new Manager(answers.officenum, answers.MgrName, answers.MgrEmail, answers.MgrID)
+            const mgr = new Manager(answers.MgrName, answers.MgrEmail, answers.MgrID, answers.officenum)
             emptyArray.push(mgr);
             empList();
         })
@@ -88,11 +88,6 @@ function addMgr() {
 function addIntern() {
     inquirer
         .prompt([
-            {
-                type: "input",
-                message: "Where did your Intern go to school??",
-                name: "intschool"
-            },
             {
                 type: "input",
                 message: "What is your Intern's name?",
@@ -107,10 +102,15 @@ function addIntern() {
                 type: "input",
                 message: "What is your Intern's ID?",
                 name: "intID"
+            },
+            {
+                type: "input",
+                message: "Where did your Intern go to school??",
+                name: "intschool"
             }
         ])
         .then((answers) => {
-            const int = new Intern(answers.intschool, answers.intName, answers.intEmail, answers.intID)
+            const int = new Intern(answers.intName, answers.intEmail, answers.intID, answers.intschool)
             emptyArray.push(int);
             empList();
         })
@@ -119,11 +119,6 @@ function addIntern() {
 function addEngineer() {
     inquirer
         .prompt([
-            {
-                type: "input",
-                message: "What is your Engineer's Github???",
-                name: "engGit"
-            },
             {
                 type: "input",
                 message: "What is your Engineer's name?",
@@ -138,10 +133,15 @@ function addEngineer() {
                 type: "input",
                 message: "What is your Engineer's ID?",
                 name: "engID"
+            },
+            {
+                type: "input",
+                message: "What is your Engineer's Github???",
+                name: "engGit"
             }
         ])
         .then((answers) => {
-            const eng = new Engineer(answers.engGit, answers.engName, answers.engEmail, answers.engID)
+            const eng = new Engineer(answers.engName, answers.engEmail, answers.engID, answers.engGit)
             emptyArray.push(eng);
             empList();
         }
