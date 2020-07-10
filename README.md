@@ -20,6 +20,8 @@ npm install
 
 ## Usage
 
+Feel free to check out this demo of the application! https://drive.google.com/file/d/1afQe4ZkIIolGT6zfT8vGa3ubpsKu1_Ln/view
+
 <img src="Assets/User_Usage_example.png" width="350px">
 
 ## License
