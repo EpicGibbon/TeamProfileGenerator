@@ -2,7 +2,7 @@
   ![badge](https://img.shields.io/badge/License-MIT-red)
 
 ## Description
-This is a command line application which is designed to be ran in the node enviorment. The application will prompt users for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of any of the possible selections. 
+This is a command line application which is designed to be ran in the node environment. The application will prompt users for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of any of the possible selections. 
 
 ## Table of Contents
 * [Description](#Description)
