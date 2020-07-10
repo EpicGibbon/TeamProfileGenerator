@@ -20,6 +20,7 @@ npm install
 
 ## Usage
 
+<img src="/User_Usage_example.png" width="350px">
 
 ## License
 MIT
